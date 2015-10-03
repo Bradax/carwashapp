@@ -55,6 +55,16 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('RegistrationCtrl', [ '$scope', function($scope) {
+.controller('FirstRegCtrl', [ '$scope', function($scope) {
+
+}])
+
+.controller('WashesListCtrl', [ '$scope', '$state', function($scope, $state) {
+    $scope.addWash = function() {
+        //$state.go('app.add-wash');
+    }
+}])
+
+.controller('AddWashCtrl', ['$scope', function($scope) {
 
 }]);

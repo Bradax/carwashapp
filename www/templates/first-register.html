@@ -1,0 +1,39 @@
+<ion-view view-title="{{'Registration' | translate}}">
+  <ion-content>
+    <div class="list">
+      <div class="item text-center item-text-wrap">
+        <h2>{{"Easy Registration" | translate}}</h2><hr>
+        <p>{{"Fill in your details to start using the app!" | translate}}</p>
+      </div>
+      <label class="item item-input padding">
+        <span class="input-label">Car Manufacturer</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Honda"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label">Car Model</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Crz"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label">Car Color</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Grey"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label">Car Plate No.</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="WWW 1234"/>
+        </label>
+      </label>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="saveData()">
+                {{"Proceed" | translate}}
+            </button>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -32,30 +32,30 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controlle
     controller: 'AppCtrl'
   })
 
-  .state('app.register', {
+  .state('app.firstRegister', {
     url: '/register',
     views: {
       'menuContent': {
-        templateUrl: 'templates/register.html',
-        controller: 'RegistrationCtrl'
+        templateUrl: 'templates/first-register.html',
+        controller: 'FirstRegCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.washes', {
+      url: '/washes',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/washes-list.html'
         }
       }
     })
     .state('app.playlists', {
-      url: '/playlists',
+      url: '/washes/add',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/add-wash.html',
+          controller: 'AddWashCtrl'
         }
       }
     })
@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controlle
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/register');
 
       $translateProvider.useStaticFilesLoader({
         prefix: 'languages/lang-',
