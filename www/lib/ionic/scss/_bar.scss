@@ -301,6 +301,12 @@
     @include button-clear(#fff, $bar-title-font-size);
   }
 }
+.bar-carwash {
+  .button {
+    @include button-style($bar-carwash-bg, $bar-carwash-border, $bar-carwash-active-bg, $bar-carwash-active-border, $bar-carwash-text);
+    @include button-clear(#fff, $bar-title-font-size);
+  }
+}
 .bar-calm {
   .button {
     @include button-style($bar-calm-bg, $bar-calm-border, $bar-calm-active-bg, $bar-calm-active-border, $bar-calm-text);

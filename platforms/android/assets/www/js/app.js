@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controllers', 'ngCordova', 'ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
   $stateProvider
 
     .state('app', {
@@ -32,42 +32,60 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.washes', {
+      url: '/washes',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/washes-list.html',
+          controller: "WashesListCtrl"
+        }
+      }
+    })
+    .state('app.washes_add', {
+      url: '/washes/add',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/washes-add.html',
+          controller: 'AddWashCtrl'
+        }
+      }
+    })
+
+  .state('app.cars', {
+    url: '/cars',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/cars-list.html',
+        controller: 'CarsListCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
+      .state('app.cars_add', {
+        url: '/cars/add',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/cars-add.html',
+            controller: 'CarsAddCtrl'
+          }
         }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+      })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+      .state('app.about', {
+          url: '/about',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/about.html',
+                  controller: 'AboutCtrl'
+              }
+          }
+      });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/cars');
+
+      $translateProvider.useStaticFilesLoader({
+        prefix: 'languages/lang-',
+        suffix: '.json'
+      });
+      $translateProvider.useSanitizeValueStrategy('escapeParameters');
 });

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controllers'])
+angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controllers', 'ngCordova', 'ngStorage'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,45 +32,56 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'starter.controlle
     controller: 'AppCtrl'
   })
 
-  .state('app.firstRegister', {
-    url: '/register',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/first-register.html',
-        controller: 'FirstRegCtrl'
-      }
-    }
-  })
-
   .state('app.washes', {
       url: '/washes',
       views: {
         'menuContent': {
-          templateUrl: 'templates/washes-list.html'
+          templateUrl: 'templates/washes-list.html',
+          controller: "WashesListCtrl"
         }
       }
     })
-    .state('app.playlists', {
+    .state('app.washes_add', {
       url: '/washes/add',
       views: {
         'menuContent': {
-          templateUrl: 'templates/add-wash.html',
+          templateUrl: 'templates/washes-add.html',
           controller: 'AddWashCtrl'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.cars', {
+    url: '/cars',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/cars-list.html',
+        controller: 'CarsListCtrl'
       }
     }
-  });
+  })
+
+      .state('app.cars_add', {
+        url: '/cars/add',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/cars-add.html',
+            controller: 'CarsAddCtrl'
+          }
+        }
+      })
+
+      .state('app.about', {
+          url: '/about',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/about.html',
+                  controller: 'AboutCtrl'
+              }
+          }
+      });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/register');
+  $urlRouterProvider.otherwise('/app/cars');
 
       $translateProvider.useStaticFilesLoader({
         prefix: 'languages/lang-',

@@ -11,6 +11,8 @@ $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
+$carwash:                         #5433f5 !default;
+
 
 
 // Base
@@ -105,10 +107,18 @@ $button-stable-active-bg:         #e5e5e5 !default;
 $button-stable-active-border:     #a2a2a2 !default;
 
 $button-positive-bg:              $positive !default;
+$button-positive-bg:              $positive !default;
 $button-positive-text:            #fff !default;
 $button-positive-border:          darken($positive, 10%) !default;
 $button-positive-active-bg:       darken($positive, 10%) !default;
 $button-positive-active-border:   darken($positive, 10%) !default;
+
+$button-carwash-bg:              $carwash !default;
+$button-carwash-bg:              $carwash !default;
+$button-carwash-text:            #fff !default;
+$button-carwash-border:          darken($carwash, 10%) !default;
+$button-carwash-active-bg:       darken($carwash, 10%) !default;
+$button-carwash-active-border:   darken($carwash, 10%) !default;
 
 $button-calm-bg:                  $calm !default;
 $button-calm-text:                #fff !default;
@@ -183,6 +193,13 @@ $bar-positive-text:               $button-positive-text !default;
 $bar-positive-border:             $button-positive-border !default;
 $bar-positive-active-bg:          $button-positive-active-bg !default;
 $bar-positive-active-border:      $button-positive-active-border !default;
+
+$bar-carwash-bg:                 rgba($button-carwash-bg, $bar-transparency) !default;
+$bar-carwash-text:               $button-carwash-text !default;
+$bar-carwash-border:             $button-carwash-border !default;
+$bar-carwash-active-bg:          $button-carwash-active-bg !default;
+$bar-carwash-active-border:      $button-carwash-active-border !default;
+
 
 $bar-calm-bg:                     rgba($button-calm-bg, $bar-transparency) !default;
 $bar-calm-text:                   $button-calm-text !default;

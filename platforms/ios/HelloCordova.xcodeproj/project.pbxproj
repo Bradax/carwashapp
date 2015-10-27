@@ -43,6 +43,9 @@
 		6797089F7A8341289FB2C1CE /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F0DDAF21AB4B139DB90024 /* UIWebViewExtension.m */; };
 		D27410EAB537495DA92BAD60 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A02E11123C43CCBCA4A723 /* CDVSplashScreen.m */; };
 		E3C392F0446E4D5BAFDD6CFB /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E557BE31FA4916A7E35168 /* CDVViewController+SplashScreen.m */; };
+		2DF9C3F699784157BC755D5D /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0085127FB846A5A47E839D /* CDVNotification.m */; };
+		F3D7FDEC55A04C559B279AC4 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3376698A37AC4F06A12BBA80 /* CDVNotification.bundle */; };
+		BDA5A66AE8BA4D56B542763C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331929B78E864FB79A286B48 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,10 @@
 		37E557BE31FA4916A7E35168 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		A2A3C6DD4D6242188452F32E /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		342B39EA439745EDB8A95A11 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5E0085127FB846A5A47E839D /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "org.apache.cordova.dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		2A183794A4E048459C1F5163 /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "org.apache.cordova.dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3376698A37AC4F06A12BBA80 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
+		331929B78E864FB79A286B48 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				BDA5A66AE8BA4D56B542763C /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +196,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* HelloCordova-Info.plist */,
+				3376698A37AC4F06A12BBA80 /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "HelloCordova/Resources";
@@ -199,6 +208,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				331929B78E864FB79A286B48 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 				37E557BE31FA4916A7E35168 /* CDVViewController+SplashScreen.m */,
 				A2A3C6DD4D6242188452F32E /* CDVSplashScreen.h */,
 				342B39EA439745EDB8A95A11 /* CDVViewController+SplashScreen.h */,
+				5E0085127FB846A5A47E839D /* CDVNotification.m */,
+				2A183794A4E048459C1F5163 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -375,6 +387,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				F3D7FDEC55A04C559B279AC4 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +423,7 @@
 				6797089F7A8341289FB2C1CE /* UIWebViewExtension.m in Sources */,
 				D27410EAB537495DA92BAD60 /* CDVSplashScreen.m in Sources */,
 				E3C392F0446E4D5BAFDD6CFB /* CDVViewController+SplashScreen.m in Sources */,
+				2DF9C3F699784157BC755D5D /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

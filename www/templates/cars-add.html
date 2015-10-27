@@ -1,0 +1,39 @@
+<ion-view view-title="{{'Add Car' | translate}}">
+  <ion-content>
+    <div class="list">
+      <div class="item text-center item-text-wrap">
+        <h2>{{"Easily Add Your Cars" | translate}}</h2><hr>
+        <p>{{"Fill in your details to start using the app!" | translate}}</p>
+      </div>
+      <label class="item item-input padding">
+        <span class="input-label item-text-wrap text-center">Car Manufacturer</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Honda" ng-model="manufacturer"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label item-text-wrap text-center">Car Model</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Crz" ng-model="model"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label item-text-wrap text-center">Car Color</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Grey" ng-model="color"/>
+        </label>
+      </label>
+      <label class="item item-input padding">
+        <span class="input-label item-text-wrap text-center">Car Plate No.</span>
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="WWW 1234" ng-model="plate"/>
+        </label>
+      </label>
+        <div class="padding">
+            <button class="button button-block button-royal" ng-click="saveData(manufacturer, model, color, plate)">
+                {{"Add Car!" | translate}}
+            </button>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
