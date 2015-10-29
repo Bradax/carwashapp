@@ -15,10 +15,10 @@ I'm a novice programmer, learning the MEAN stack. My challenges are:
 
 ###TODO
 ```
-1. Build WashesServices - A factory service that stores all washes made by user on a specific car.
-2. About This App (details, contact)
-3. Build a History Service that shows user history of washes in a calender repeating each calenders monthly.
-4. Build a server that stores all the data, and allow car wash owners/managers to manage washes (check ins) and free washes given.
+1. [] Build WashesServices - A factory service that stores all washes made by user on a specific car.
+2. [] About This App (details, contact)
+3. [] Build a History Service that shows user history of washes in a calender repeating each calenders monthly.
+4. [] Build a server that stores all the data, and allow car wash owners/managers to manage washes (check ins) and free washes given.
 ```
 
 Any help will be deeply appreciated.
