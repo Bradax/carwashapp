@@ -5,10 +5,10 @@ This app allows car wash owners/managers to easily substitue traditional free ca
 This is built using an Ionic sidemenu starter app with Angular, ngCordova, and ngStorage.
 
 ###Challenges
-I'm a novice programmer, learning the MEAN stack. My challenges are:
-1. Unable to initilize a proper MongoDB.
-2. Lack of app development cycle plan.
-3. App isn't ready for IOS9 WebUiFix (glitchy transitions between views)
+I'm a novice programmer, learning the MEAN stack. My challenges are: <br>
+1. Unable to initilize a proper MongoDB. <br>
+2. Lack of app development cycle plan. <br>
+3. App isn't ready for IOS9 WebUiFix (glitchy transitions between views) <br>
 4. Currently only serving end-users, intead of supporting car wash owners/managers too.
 
 ###TODO
