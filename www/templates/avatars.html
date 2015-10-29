@@ -1,0 +1,12 @@
+<ion-view title="Avatars">
+    <ion-content class="has-header">
+        <div class="item item-input-inset">
+            <label>Select a photo:</label>
+        </div>
+        <div class="row" class="padding" ng-repeat="avatar in avatars" ng-if="$index % 3 == 0" ng-init="photoIndex = $index">
+            <div ng-repeat="i in [0,1,2]" ng-if="(photoIndex + i)<avatars.length" class="col">
+                <img style="height: 75px; width: 125px;" class="item padding" ng-src="{{avatars[photoIndex+i].image}}" ng-click="setAvatar(avatars[photoIndex+i].image)">
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

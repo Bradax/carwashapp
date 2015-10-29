@@ -29,6 +29,11 @@
           <input type="text" placeholder="WWW 1234" ng-model="plate"/>
         </label>
       </label>
+      <label class="item item-input padding item-icon-right" ng-click="chooseImage()">
+        <span class="input-label item-text-wrap text-center">Avatar</span>
+        <img ng-src="{{image}}" style="height: 75px; width: 150px;"/>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </label>
         <div class="padding">
             <button class="button button-block button-royal" ng-click="saveData(manufacturer, model, color, plate)">
                 {{"Add Car!" | translate}}

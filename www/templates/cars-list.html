@@ -6,25 +6,21 @@
         <div class="list">
             <div class="item item-thumbnail-left item-icon-right icon-accessory" ng-repeat="car in cars" ng-click="editCar(car.id)">
                 <div class="item-image">
-                    <img ng-src="{{car.img}}" />
+                    <img ng-src="{{car.image}}" />
                 </div>
                 <div class="item-borderless">
                     <i class="fa fa-bars"></i>
                     <h2>{{car.manufacturer}}{{" "}}{{car.model}}</h2>
                     <h2>{{car.plate}}</h2>
                     <p>{{car.color}}</p>
-                    <p class="item-note">{{car.washes}}{{" "}}{{"Washes"}}</p>
+                    <p class="item-note">{{car.washes.length}}{{" "}}{{"Washes"}}</p>
                 </div>
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
-            <div ng-hide="cars">
-                <div class="item item-icon-left assertive" ng-hide="cars">
-                    <i class="ion-alert icon"></i>{{"You do not have any cars." | translate}}
-                </div>
-                <p class="item-note">To start using the app, please add a car.</p>
+            <div class="item item-icon-left assertive" ng-hide="cars.length > 1">
+                <i class="ion-alert icon"></i>{{"You do not have any cars." | translate}}<br>
+                <p class="item-text-wrap">To start using the app, please add a car.</p>
             </div>
-            {{cars.length}}<br>
-            {{cars}}
         </div>
     </ion-content>
 </ion-view>

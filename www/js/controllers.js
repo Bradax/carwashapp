@@ -1,47 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
-
-.controller('WashesListCtrl', [ '$scope', '$state', '$cordovaDialogs', function($scope, $state, $cordovaDialogs) {
+    .controller('WashesListCtrl', [ '$scope', '$state', '$cordovaDialogs', function($scope, $state, $cordovaDialogs) {
         $scope.addWash = function() {
             $cordovaDialogs.prompt('Please pass the phone to the staff to enter the passphrase.', 'Passphrase', ['Cancel','Submit'], 'Passphrase')
                 .then(function(result) {
@@ -75,63 +34,48 @@ angular.module('starter.controllers', [])
 
     }])
 
-.controller('AddWashCtrl', ['$scope', function($scope) {
+    .controller('AddWashCtrl', ['$scope', function($scope) {
         $scope.passphrase = "fantastic";
+    }])
 
-}])
-
-.controller('CarsListCtrl', ['$scope', '$state', '$localStorage', function($scope, $state, $localStorage) {
+    .controller('CarsListCtrl', ['$scope', '$state', '$cordovaDialogs', 'StorageServices', function($scope, $state, $cordovaDialogs, StorageServices) {
        //TODO
-        //$scope.idCounter = 1;
 
-        //$scope.cars = [
-        //    {
-        //        id: '1',
-        //        manufacturer: "Proton",
-        //        model: "Saga",
-        //        color: "Black",
-        //        plate: "WB 1629 P",
-        //        img: "http://www.deluxevectors.com/images/vector_images/thumb/sports-car-vector-image.jpg",
-        //        washes: 2
-        //    },
-        //    {
-        //        id: '2',
-        //        manufacturer: "Nissan",
-        //        model: "Almera",
-        //        color: "Silver",
-        //        plate: "BMW 2112",
-        //        img: "http://cdn.paultan.org/image/2015/01/01-New-Nissan-Almera_NISMO-630x346.jpg",
-        //        washes: 2
-        //
-        //    },
-        //    {
-        //        id: '3',
-        //        manufacturer: "Audi",
-        //        model: "R8",
-        //        color: "White",
-        //        plate: "WWW 714",
-        //        img: "https://upload.wikimedia.org/wikipedia/commons/a/a3/E-tron_(Audi)_at_IAA_-_front.JPG",
-        //        washes: 2
-        //    }
-        //];
-        $scope.cars = $localStorage.cars;
+        $scope.cars = StorageServices.loadDB();
 
 
         $scope.addCar = function() {
             $state.go('app.cars_add');
-        }
-}])
+        };
 
-.controller('CarsAddCtrl', ['$scope', '$localStorage', '$state', function($scope, $localStorage, $state) {
-        $scope.saveData = function(manufacturer, model, color, plate) {
-          $localStorage.cars = [
-              {"id": model + plate, "manufacturer" : manufacturer, "model": model, "color": color, "plate": plate}
-          ];
-            alert($localStorage.cars);
-            $state.go('app.cars');
+        $scope.deleteCar = function(id) {
+            //TODO
+            $cordovaDialogs.confirm('Are you sure?', 'Delete Car', [''])
         };
     }])
 
-.controller('AboutCtrl', [ '$scope', function($scope) {
+    .controller('CarsAddCtrl', ['$scope', '$state', 'StorageServices', 'AvatarServices', function($scope, $state, StorageServices, AvatarServices) {
+        $scope.saveData = function(manufacturer, model, color, plate, image) {
+            StorageServices.saveToDB(manufacturer, model, color, plate);
+            //alert($localStorage.cars);
+            $state.go('app.cars');
+        };
 
-}]);
+        $scope.chooseImage = function() {
+          $state.go('app.avatars')
+        };
+
+        $scope.image = AvatarServices.getDefaultAvatar();
+    }])
+
+    .controller("AvatarsCtrl", ["$scope", "AvatarServices", function($scope, AvatarServices) {
+        $scope.avatars = AvatarServices.getAvatars();
+
+        $scope.setAvatar = function(image) {
+            //TODO
+        }
+    }])
+
+    .controller('AboutCtrl', [ '$scope', function($scope) {
+
+    }]);
